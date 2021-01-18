@@ -35,3 +35,8 @@ Eh, possibly not...
 - Resize
 - Rotate
 - Prob don't need text input (can use existing headings) but I guess nice to have
+
+Open tasks:
+- Copy/paste broken
+- Deletion broken
+- Text editing error messages
