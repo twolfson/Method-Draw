@@ -45,3 +45,4 @@ Open tasks:
 - [ ] Finish out integration proof of concept
     - [x] Programmatic save -- `svgCanvas.svgCanvasToString()`
     - [ ] Relocate tools
+- [ ] Remove context menu layer support
