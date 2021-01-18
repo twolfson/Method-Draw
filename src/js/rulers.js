@@ -7,7 +7,8 @@ for(var i = .1; i < 1E5; i *= 10) {
 }
 
 function updateRulers(svgCanvas, scanvas, zoom) {
-
+  return;
+  
   var workarea = document.getElementById("workarea");
   var title_show = document.getElementById("title_show");
   var offset_x = 66;
