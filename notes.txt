@@ -38,6 +38,6 @@ Eh, possibly not...
 - Nice to have: Undo/redo support (though should have our own content in that stack)
 
 Open tasks:
-- Copy/paste broken
-- Deletion broken
-- Text editing error messages
+- [ ] Copy/paste broken
+- [ ] Deletion broken
+- [x] Text editing error messages
