@@ -150,26 +150,14 @@ window.methodDraw = function() {
       multiselected = (elems.length >= 2) ? elems : false;
       if (svgCanvas.elementsAreSame(multiselected)) selectedElement = multiselected[0]
       if (selectedElement != null) {
-        $('#multiselected_panel').hide()
-        updateToolbar();
-        if (multiselected.length) { //multiselected elements are the same
-          $('#tools_top').addClass('multiselected')
-        }
       }
       else if (multiselected.length) {
         $('.context_panel').hide()
-        $('#tools_top').removeClass('multiselected')
-        $('#multiselected_panel').show()
       }
       else {
         $('.context_panel').hide()
         $('#canvas_panel').show()
-        $('#tools_top').removeClass('multiselected')
       }
-
-      // We need to update the context panel always when we've selected a different element. Otherwise some
-      // menu items are disabled even if they shouldn't be (e.g. group multiple elements)
-      updateContextPanel();
 
       svgCanvas.runExtensions("selectedChanged", {
         elems: elems,
@@ -231,10 +219,6 @@ window.methodDraw = function() {
       // toolbar here as that creates an infinite loop)
       // also this updates the history buttons
   
-      // we tell it to skip focusing the text control if the
-      // text element was previously in focus
-      updateContextPanel();
-      
       // In the event a gradient was flipped:
       if(selectedElement && mode === "select") {
         Editor.paintBox.fill.update();
@@ -1780,7 +1764,6 @@ window.methodDraw = function() {
     
     Editor.paintBox.fill = new PaintBox('#fill_color', 'fill');
     Editor.paintBox.stroke = new PaintBox('#stroke_color', 'stroke');
-    Editor.paintBox.canvas = new PaintBox('#canvas_color', 'canvas');
 
     $('#stroke_width').val(curConfig.initStroke.width);
     $('#group_opacity').val(curConfig.initOpacity * 100);
