@@ -5467,6 +5467,25 @@ this.open = function() {
   // Nothing by default, handled by optional widget/extension
 };
 
+// Function: save
+// Serializes the current drawing into SVG XML text and returns it to the 'saved' handler.
+// This function also includes the XML prolog.  Clients of the SvgCanvas bind their save
+// function to the 'saved' event.
+//
+// Returns: 
+// Nothing
+this.save = function() {
+  // remove the selected outline before serializing
+  clearSelection();
+  save_options.apply = true;
+  
+  // no need for doctype, see http://jwatt.org/svg/authoring/#doctype-declaration
+  var str = this.svgCanvasToString();
+  var blob = new Blob([ str ], {type: "image/svg+xml;charset=utf-8"});
+  var dropAutoBOM = true;
+  saveAs(blob, "method-draw-image.svg", dropAutoBOM);
+};
+
 // Function: rasterExport
 // Generates a PNG Data URL based on the current image, then calls "exported" 
 // with an object including the string and any issues found
