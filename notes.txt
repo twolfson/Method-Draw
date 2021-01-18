@@ -41,3 +41,7 @@ Open tasks:
 - [x] Copy/paste broken
 - [x] Deletion broken
 - [x] Text editing error messages
+- [ ] Remove lots of hotkeys which we don't want in reduced context (low priority)
+- [ ] Finish out integration proof of concept
+    - [x] Programmatic save -- `svgCanvas.svgCanvasToString()`
+    - [ ] Relocate tools
