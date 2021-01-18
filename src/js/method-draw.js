@@ -612,21 +612,6 @@ window.methodDraw = function() {
           if(el_name == "rect") $("#cornerRadiusLabel").show()
           else $("#cornerRadiusLabel").hide()
           
-          $.each(cur_panel, function(i, item) {
-            var attrVal = elem.getAttribute(item);
-            if(curConfig.baseUnit !== 'px' && elem[item]) {
-              var bv = elem[item].baseVal.value;
-              attrVal = svgedit.units.convertUnit(bv);
-            }
-            
-            //update the draginput cursors
-            var name_item = document.getElementById(el_name + '_' + item);
-            name_item.value = Math.round(attrVal) || 0;
-            if (name_item.getAttribute("data-cursor") === "true") {
-              $.fn.dragInput.updateCursor(name_item );
-            }
-          });
-          
           if(el_name == 'text') {
             var font_family = elem.getAttribute("font-family");
             var cleanFontFamily = font_family.split(",")[0].replace(/'/g, "");
