@@ -1,0 +1,12 @@
+# 2021-01-17
+Repo doesn't require any build steps
+
+Instead, it has a slick HTML + Gulp setup which compiles `script` tags and such which are delimited by `<!--` comments
+
+---
+
+`svgcanvas.js` seems to be pretty important
+After searching around, this is part of https://github.com/SVG-Edit/svgedit
+so that might be a better starting point for us
+
+Though this repo prob highlights how to leverage their setup
