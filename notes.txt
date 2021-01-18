@@ -21,3 +21,17 @@ App is started via `$(methodDraw.init)` in footer of `method-draw.js`
 Still want to find a way to dynamically add a box without going through click motions
 but prob more headache than it's worth for now
 For now, it does seem like we can reduce down the repo to just have the line and rectangle tools
+
+Reducing is surprisingly not bad
+I do feel like we might be fighting the repo every now and then but relatively straightforward
+
+On the other hand though, the primary content we want/need can prob be built using jQuery UI (e.g. draggable, resizable)
+Eh, possibly not...
+- Shortcuts:
+    - Arrow key movement
+    - Copy/paste
+    - Delete
+- Drag
+- Resize
+- Rotate
+- Prob don't need text input (can use existing headings) but I guess nice to have
