@@ -44,5 +44,17 @@ Open tasks:
 - [ ] Remove lots of hotkeys which we don't want in reduced context (low priority)
 - [ ] Finish out integration proof of concept
     - [x] Programmatic save -- `svgCanvas.svgCanvasToString()`
-    - [ ] Relocate tools
+    - [x] Relocate tools - styled them, good enough
 - [ ] Remove context menu layer support
+
+---
+
+Rethinking this approach as we'll need drag support for other tasks
+and feel like it won't be easy to integrate existing setup
+as well as have bulkier data with a whole SVG
+
+Actually...
+Going to stop here, like for real
+We can do image editing in another place
+
+and the remaining integration of the tool is going to be annoying/complex with little yield
