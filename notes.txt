@@ -17,3 +17,7 @@ So many parts...
 Going to try ditching HTML content now, see what happens
 
 App is started via `$(methodDraw.init)` in footer of `method-draw.js`
+
+Still want to find a way to dynamically add a box without going through click motions
+but prob more headache than it's worth for now
+For now, it does seem like we can reduce down the repo to just have the line and rectangle tools
