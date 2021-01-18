@@ -221,8 +221,6 @@ window.methodDraw = function() {
   
       // In the event a gradient was flipped:
       if(selectedElement && mode === "select") {
-        Editor.paintBox.fill.update();
-        Editor.paintBox.stroke.update();
       }
       
       svgCanvas.runExtensions("elementChanged", {
@@ -489,7 +487,6 @@ window.methodDraw = function() {
             seg_type.val(4).attr('disabled','disabled');
           }
         }
-        $("#tools_top").removeClass("multiselected")        
         $("#stroke_panel").hide();
         $("#canvas_panel").hide();
         return;
@@ -505,11 +502,9 @@ window.methodDraw = function() {
       if (multiselected) {
         multiselected = multiselected.filter(Boolean);
         elem = (svgCanvas.elementsAreSame(multiselected)) ? multiselected[0] : null
-        if (elem) $("#tools_top").addClass("multiselected")
       }
 
       if (!elem && !multiselected) {
-        $("#tools_top").removeClass("multiselected")        
         $("#stroke_panel").hide();
         $("#canvas_panel").show();
       }
@@ -1762,24 +1757,11 @@ window.methodDraw = function() {
       }
     };
     
-    Editor.paintBox.fill = new PaintBox('#fill_color', 'fill');
-    Editor.paintBox.stroke = new PaintBox('#stroke_color', 'stroke');
-
     $('#stroke_width').val(curConfig.initStroke.width);
     $('#group_opacity').val(curConfig.initOpacity * 100);
     
     // Use this SVG elem to test vectorEffect support
-    var test_el = Editor.paintBox.fill.rect.cloneNode(false);
-    test_el.setAttribute('style','vector-effect:non-scaling-stroke');
-    var supportsNonSS = (test_el.style.vectorEffect === 'non-scaling-stroke');
-    test_el.removeAttribute('style');
-    var svgdocbox = Editor.paintBox.fill.rect.ownerDocument;
-    // Use this to test support for blur element. Seems to work to test support in Webkit
-    var blur_test = svgdocbox.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
-    if(typeof blur_test.stdDeviationX === "undefined") {
-      $('#tool_blur').hide();
-    }
-    $(blur_test).remove();
+    var supportsNonSS = false;
       
     $('#tool_fill').click(function(){
       if ($('#tool_fill').hasClass('active')) {
