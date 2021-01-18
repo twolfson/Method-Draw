@@ -10,3 +10,10 @@ After searching around, this is part of https://github.com/SVG-Edit/svgedit
 so that might be a better starting point for us
 
 Though this repo prob highlights how to leverage their setup
+
+So many parts...
+`method-draw.js#Editor.init` is where all our hooks get started (e.g. add a `return` before `$.SvgCanvas` and see how empty it is
+
+Going to try ditching HTML content now, see what happens
+
+App is started via `$(methodDraw.init)` in footer of `method-draw.js`

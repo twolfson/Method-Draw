@@ -40,8 +40,9 @@ window.methodDraw = function() {
     $("#canvas_width").val(curConfig.dimensions[0]);
     $("#canvas_height").val(curConfig.dimensions[1]);
 
-
     Editor.canvas = svgCanvas = new $.SvgCanvas(document.getElementById("svgcanvas"), curConfig);
+
+    return;
     Editor.paintBox = {fill: null, stroke:null, canvas:null};
     var isMac = (navigator.platform.indexOf("Mac") >= 0),
       isWebkit = (navigator.userAgent.indexOf("AppleWebKit") >= 0),
