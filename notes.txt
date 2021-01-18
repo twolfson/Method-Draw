@@ -35,6 +35,7 @@ Eh, possibly not...
 - Resize
 - Rotate
 - Prob don't need text input (can use existing headings) but I guess nice to have
+- Nice to have: Undo/redo support (though should have our own content in that stack)
 
 Open tasks:
 - Copy/paste broken

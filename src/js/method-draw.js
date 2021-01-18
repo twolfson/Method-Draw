@@ -159,6 +159,10 @@ window.methodDraw = function() {
         $('#canvas_panel').show()
       }
 
+      // We need to update the context panel always when we've selected a different element. Otherwise some
+      // menu items are disabled even if they shouldn't be (e.g. group multiple elements)
+      updateContextPanel();
+
       svgCanvas.runExtensions("selectedChanged", {
         elems: elems,
         selectedElement: selectedElement,
@@ -219,6 +223,10 @@ window.methodDraw = function() {
       // toolbar here as that creates an infinite loop)
       // also this updates the history buttons
   
+      // we tell it to skip focusing the text control if the
+      // text element was previously in focus
+      updateContextPanel();
+      
       // In the event a gradient was flipped:
       if(selectedElement && mode === "select") {
       }
